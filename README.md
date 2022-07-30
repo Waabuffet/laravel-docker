@@ -27,6 +27,9 @@ chmod +x ./*.sh
 Finally, make sure to change the value of the variable `laravel_path` in `laravel.sh` to the path where this repo is cloned.  
 Also, you can change the value of each variable in the `.env` file.  
 **NB: The `PROJECT_PATH` variable value will change dynamically depending on where you use the `laravel` alias command**
+
+This project uses the `bitnami/laravel` official docker container. If you wish to change the `LARAVEL_VERSION` variable, make sure to check the existence of that container on their [docker hub repo](https://hub.docker.com/r/bitnami/laravel)
+
 # Usage
 
 These scripts can be used either to create a new laravel project or to use an existing one.
