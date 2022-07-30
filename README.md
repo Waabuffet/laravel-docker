@@ -28,7 +28,7 @@ Finally, make sure to change the value of the variable `laravel_path` in `larave
 Also, you can change the value of each variable in the `.env` file.  
 **NB: The `PROJECT_PATH` variable value will change dynamically depending on where you use the `laravel` alias command**
 
-This project uses the `bitnami/laravel` official docker container. If you wish to change the `LARAVEL_VERSION` variable, make sure to check the existence of that container on their [docker hub repo](https://hub.docker.com/r/bitnami/laravel)
+This project uses the `bitnami/laravel` official docker image. If you wish to change the `LARAVEL_VERSION` variable, make sure to check the existence of that container on their [docker hub repo](https://hub.docker.com/r/bitnami/laravel)
 
 # Usage
 
