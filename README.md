@@ -24,8 +24,8 @@ Then, make your scripts executable by using this command:
 chmod +x ./*.sh
 ```
 
-Finally, make sure to change the value of the variable `laravel_path` in `laravel.sh` to the path where this repo is cloned.
-Also, you can change the value of each variable in the `.env` file.
+Finally, make sure to change the value of the variable `laravel_path` in `laravel.sh` to the path where this repo is cloned.  
+Also, you can change the value of each variable in the `.env` file.  
 **NB: The `PROJECT_PATH` variable value will change dynamically depending on where you use the `laravel` alias command**
 # Usage
 
