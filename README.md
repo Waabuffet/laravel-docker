@@ -98,8 +98,6 @@ php artisan make:controller ProductController
 # use it as follows, simply replace "php" with "laravel"
 laravel artisan <COMMAND> <ARGUMENTS>
 
-# example:
-
 ```
 
 ## Stop the server
