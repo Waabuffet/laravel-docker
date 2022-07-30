@@ -42,7 +42,7 @@ laravel new <DB_NAME>
 ```
 
 The above command will first start a mysql container, create the database and a user and grant the user full privileges on that database.
-It will then start the laravel cluster (laravel server, mysql database and phpmyadmin server) and start creating the laravel files, then when done, migrate the database and start the server on `localhost` port 80 (you can change the port from the `.env` file). phpmyadmin is running on port 8080.
+It will then start the laravel cluster (laravel server, mysql database, phpmyadmin server, mailhog smtp server) and start creating the laravel files, then when done, migrate the database and start the server on `localhost` port 80 (you can change the port from the `.env` file). phpmyadmin is running on port 8080.
 
 The database and laravel files will be stored on the host machine in the current directory under `mysql` and `website` directories respectively.
 
