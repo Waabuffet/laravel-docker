@@ -38,18 +38,41 @@ else
 				esac
 			fi
 			;;
+		"artisan")
+			if [ ! "$(docker ps -q -f name=laravel_app)" ]
+			then
+				echo "laravel container is not running"
+			else
+				docker-compose -f $laravel_path/docker-compose.yml exec myapp php artisan "${@:2}"
+			fi
+			;;
 		"tinker")
-			docker-compose -f $laravel_path/docker-compose.yml exec myapp php artisan tinker
+			if [ ! "$(docker ps -q -f name=laravel_app)" ]
+			then
+				echo "laravel container is not running"
+			else
+				docker-compose -f $laravel_path/docker-compose.yml exec myapp php artisan tinker
+			fi
 			;;
 		"migrate")
-			docker-compose -f $laravel_path/docker-compose.yml exec myapp php artisan migrate:fresh $2
+			if [ ! "$(docker ps -q -f name=laravel_app)" ]
+			then
+				echo "laravel container is not running"
+			else
+				docker-compose -f $laravel_path/docker-compose.yml exec myapp php artisan migrate:fresh $2
+			fi
 			;;
 		"composer")
 			if [ -z "$2" ]
 			then
 				echo "please specify which composer package you want to install in the second argument"
 			else
-				docker-compose -f $laravel_path/docker-compose.yml exec myapp composer require $2
+				if [ ! "$(docker ps -q -f name=laravel_app)" ]
+				then
+					echo "laravel container is not running"
+				else
+					docker-compose -f $laravel_path/docker-compose.yml exec myapp composer require $2
+				fi
 			fi
 			;;
 		"new")
