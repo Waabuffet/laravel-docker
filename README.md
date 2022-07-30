@@ -46,7 +46,7 @@ It will then start the laravel cluster (laravel server, mysql database and phpmy
 
 The database and laravel files will be stored on the host machine in the current directory under `mysql` and `website` directories respectively.
 
-# Run existing project
+## Run existing project
 Use the following command to run an existing project:
 ```
 laravel server start <DB_NAME>
@@ -59,7 +59,7 @@ You can follow the laravel server logs using the following command:
 docker logs -f laravel_app
 ```
 
-# Run cloned project (first time)
+## Run cloned project (first time)
 We can use the same command to create a new project:
 ```
 laravel new <DB_NAME>
@@ -67,13 +67,13 @@ laravel new <DB_NAME>
 
 This will create a database, user and grant them privileges. It will then install all project dependencies before starting the laravel server.
 
-# Run tinker
+## Run tinker
 Using this command while laravel server is running:
 ```
 laravel tinker
 ```
 
-# Install new composer package
+## Install new composer package
 Using this command while laravel server is running:
 ```
 laravel composer <PACKAGE_NAME>
@@ -81,7 +81,7 @@ laravel composer <PACKAGE_NAME>
 
 This will install the composer package in the project
 
-# Start new fresh database
+## Start new fresh database
 Using this command while laravel server is running:
 ```
 laravel migrate [--seed]
@@ -89,7 +89,7 @@ laravel migrate [--seed]
 
 The `--seed` parameter is optional
 
-# Run any artisan command
+## Run any artisan command
 Using this command while laravel server is running:
 ```
 # similar to the command:
@@ -102,7 +102,7 @@ laravel artisan <COMMAND> <ARGUMENTS>
 
 ```
 
-# Stop the server
+## Stop the server
 Using this command while laravel server is running:
 ```
 laravel server stop
