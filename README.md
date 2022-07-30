@@ -82,12 +82,25 @@ laravel composer <PACKAGE_NAME>
 This will install the composer package in the project
 
 # Start new fresh database
-using this command while laravel server is running:
+Using this command while laravel server is running:
 ```
 laravel migrate [--seed]
 ```
 
 The `--seed` parameter is optional
+
+# Run any artisan command
+Using this command while laravel server is running:
+```
+# similar to the command:
+php artisan make:controller ProductController
+
+# use it as follows, simply replace "php" with "laravel"
+laravel artisan <COMMAND> <ARGUMENTS>
+
+# example:
+
+```
 
 # Stop the server
 Using this command while laravel server is running:
