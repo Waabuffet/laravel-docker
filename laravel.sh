@@ -22,12 +22,19 @@ else
 			else
 				case $2 in
 					"start")
-						if [ -z "$3" ]
+						if [ -z "$3" ] && [ ! -f $(pwd)/website/.env ]
 						then
 							echo "Please specify the database name in the third argument"
 						else
-							db_name=$3
+							db_name=""
 							mydir=$(pwd)
+							if [ -z "$3" ]
+							then
+								. $mydir/website/.env
+								db_name=$DB_DATABASE
+							else
+								db_name=$3
+							fi
 							$laravel_path/replace-env.sh $laravel_path $mydir $db_name
 							docker-compose -f $laravel_path/docker-compose.yml --env-file $laravel_path/.env up -d
 						fi
