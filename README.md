@@ -53,6 +53,8 @@ laravel server start <DB_NAME>
 ```
 
 The reason we pass `<DB_NAME>` as a parameter is to allow multiple projects to exist on the same machine (in different directories of course).  
+UPDATE: now you do not need to pass the `<DB_NAME>` parameter as it will read it from the `.env` file from inside the project
+
 **NB: The server will take a little time to be ready after the container has started.**  
 You can follow the laravel server logs using the following command:
 ```
