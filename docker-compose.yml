@@ -1,4 +1,4 @@
-version: '2'
+version: '3.9'
 
 services:
   database:
@@ -6,12 +6,19 @@ services:
     container_name: laravel_db
     environment:
       - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE=$DB_DATABASE
+      - MYSQL_USER=$DB_USERNAME
+      - MYSQL_PASSWORD=$DB_PASSWORD
     volumes:
       - $PROJECT_PATH/mysql:/var/lib/mysql
+    # healthcheck:
+    #   test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+    #   timeout: 5s
+    #   retries: 20
   myapp:
     image: bitnami/laravel:$LARAVEL_VERSION 
     ports:
-      - $LARAVEL_APP_PORT:3000
+      - $LARAVEL_APP_PORT:$LARAVEL_INTERNAL_PORT
     container_name: laravel_app
     environment:
       - DB_HOST=database
@@ -21,8 +28,9 @@ services:
       - DB_PASSWORD=$DB_PASSWORD
     volumes:
       - $PROJECT_PATH/website:/app
-    depends_on:
-      - database
+    # depends_on:
+    #   database:
+    #     condition: service_healthy
   mailhog:
     platform: linux/x86_64
     image: mailhog/mailhog
